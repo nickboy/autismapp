@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9487D916-9EBC-490C-99C4-BEE0BC7AAB6C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AutismApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>870EB096-6934-4F0A-AA4F-6642F9ECDB71</key>
+		<string>https://github.com/nickboy/autismapp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AutismApp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>870EB096-6934-4F0A-AA4F-6642F9ECDB71</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nickboy/autismapp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>870EB096-6934-4F0A-AA4F-6642F9ECDB71</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>870EB096-6934-4F0A-AA4F-6642F9ECDB71</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AutismApp-1-1</string>
+		</dict>
+	</array>
+</dict>
+</plist>

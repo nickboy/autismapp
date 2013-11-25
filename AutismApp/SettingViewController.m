@@ -14,9 +14,11 @@
 
 @end
 
-@implementation SettingViewController
+@implementation SettingViewController{
+    NSMutableArray * reinforcementList;
+    NSMutableArray *reinforcementVideoImageList;
+}
 @synthesize picker;
-
 
 
 NSArray *categoryArray;
@@ -35,13 +37,14 @@ NSArray *categoryArray;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
     UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0,0,768,44)];
     [self.view addSubview:navBar];
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Back"
                                    style:UIBarButtonSystemItemCancel
-                                   target:self action:@selector(back:)] ;
+                                   target:self action:@selector(back:)];
     
     UINavigationItem *navItem = [[UINavigationItem alloc]
                                  initWithTitle:@"Settings"];
@@ -50,12 +53,18 @@ NSArray *categoryArray;
     
     categoryArray =[NSArray arrayWithObjects:@"Color",@"Letter",@"Shape",@"Number", nil];
     
+    
+    //prepare thumbnails for the reinforcement collection
+    NSMutableArray *reinforcementVideoUrlList = [[NSMutableArray alloc]
+                                                 initWithObjects:@"ykI2A9-GY-s",
+                                                 @"OkrMnu9k4-A",
+                                                 @"OxZceNN40FA",
+                                                 @"9EuIo8VqHjs",nil];;
+    reinforcementVideoImageList = [self generateThumbnailList:reinforcementVideoUrlList];
+    
+    
     [self.collectionView registerNib:[UINib nibWithNibName:@"MyCell" bundle:nil] forCellWithReuseIdentifier:@"CELL"];
     [self doBundle];
-    
-    NSURL *url=[[NSURL alloc] initWithString:@"http://www.yahoo.com"];
-    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
-    [_webview loadRequest:request];
     
     
     
@@ -129,7 +138,7 @@ NSArray *categoryArray;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 300;
+    return [reinforcementVideoImageList count];
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -140,11 +149,11 @@ NSArray *categoryArray;
     UILabel *titleLabel = (UILabel *)[cell viewWithTag:100];
     [titleLabel setText:title];
     
+    UIImageView *youtubeImageView = (UIImageView *)[cell viewWithTag:110];
+    youtubeImageView.image = [reinforcementVideoImageList objectAtIndex:indexPath.row];
     
-//    NSURL *url=[[NSURL alloc] initWithString:@"http://www.yahoo.com"];
-//    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
-//    UIWebView *videoWeb = (UIWebView *)[cell viewWithTag:101];
-//    [videoWeb loadRequest:request];
+    //NSLog(@"row number : %@",indexPath.row);
+    
     
     
     
@@ -167,6 +176,20 @@ NSArray *categoryArray;
     cell.backgroundColor = [UIColor grayColor];
 }
 
+
+-(NSMutableArray *)generateThumbnailList:(NSMutableArray *)URLArray {
+    NSMutableArray *tempList = [[NSMutableArray alloc]init];
+    if ([URLArray count]>0)
+    for (NSString *string in URLArray){
+        NSString *urlString =[NSString stringWithFormat:@"http://img.youtube.com/vi/%@/2.jpg", string];
+        NSLog(@"%@",urlString);
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSData *imageData = [NSData dataWithContentsOfURL:url];
+        UIImage *thumbnail = [UIImage imageWithData:imageData];
+        [tempList addObject:thumbnail];
+    }
+    return tempList;
+}
 
 
 

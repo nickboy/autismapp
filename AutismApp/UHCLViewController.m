@@ -38,9 +38,6 @@
     [infoButton addTarget:self action:@selector(showInfo:) forControlEvents:UIControlEventTouchUpInside];
     self.title = @"Autism App";
     
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning

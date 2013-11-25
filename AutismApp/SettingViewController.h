@@ -12,12 +12,11 @@
 @interface SettingViewController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate, UICollectionViewDataSource,UICollectionViewDelegate>{
     NSArray *array;
     NSString *type;
-    NSMutableArray * reinforcementList;
+
 }
 
 @property(strong, nonatomic) IBOutlet UIPickerView *picker;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 - (IBAction)back:(id)sender;
 - (IBAction)start:(id)sender;
-@property (strong, nonatomic) IBOutlet UIWebView *webview;
 @end

@@ -20,7 +20,7 @@
     if (self) {
         // Custom initialization
         
-        NSArray *booksArray = [[NSArray alloc]initWithObjects:@"Hamlet",@"King Lear", @"Othello", @"Macbeth"];
+//        NSArray *booksArray = [[NSArray alloc]initWithObjects:@"Hamlet",@"King Lear", @"Othello", @"Macbeth", nil];
         
     }
     return self;

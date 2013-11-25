@@ -10,7 +10,6 @@
 
 @interface MyCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *cellLabel;
-@property (strong, nonatomic) IBOutlet UIWebView *videoWeb;
-
+@property (weak, nonatomic) IBOutlet UIImageView *cellImage;
 
 @end
